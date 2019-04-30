@@ -28,7 +28,7 @@
             ref="multipleTable"
             :data="tickets"
             tooltip-effect="dark"
-            style="width: 100%"
+            style="width: 100%;height: 400px"
             max-height="400px"
             @selection-change="handleSelectionChange">
             <el-table-column
