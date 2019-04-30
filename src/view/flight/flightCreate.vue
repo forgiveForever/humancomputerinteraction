@@ -29,6 +29,7 @@
             :data="tickets"
             tooltip-effect="dark"
             style="width: 100%"
+            max-height="400px"
             @selection-change="handleSelectionChange">
             <el-table-column
               type="selection"
