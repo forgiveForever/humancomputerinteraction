@@ -3,7 +3,7 @@
 
    <el-row :gutter="20">
      <el-col :offset="3" :span="6">
-       <el-form   ref="form" :model="form" :rules="rules" size="small" label-width="120px">
+       <el-form   ref="bookForm2" :model="form" :rules="rules" size="small" label-width="120px">
          <fieldset style="color: rgb(64,158,255);border-color: rgb(245,245,245);border-width:1px;text-align: left">
            <legend>旅行社信息</legend>
            <el-form-item  prop="travelAgencyName" label="旅行社名称："  >
@@ -23,7 +23,7 @@
      </el-col>
 
      <el-col  :span="11">
-       <el-form :rules="rules"  ref="form" :model="form" size="small" label-width="120px" >
+       <el-form  ref="bookForm1" :rules="rules"  :model="form" size="small" label-width="120px" >
          <fieldset style=" color: rgb(64,158,255);border-color: rgb(245,245,245);border-width:1px;text-align: left">
            <legend>旅客信息</legend>
                <el-form-item prop="passengerName" label="旅客姓名：" style="float: left;width: 48%;" >
@@ -142,7 +142,8 @@
               passengerFlightTime:this.form.passengerFlightTime,
               isPay:'否',
           };
-
+          this.$refs.bookForm1.resetFields();
+          this.$refs.bookForm2.resetFields();
           this.form= {
             travelAgencyName: '',
               travelAgencyAddress: '',

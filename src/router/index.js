@@ -17,7 +17,18 @@ Vue.use(Router)
         label: '主页',
         requireAuth: true,//判断是否需要登录
       },
-      component: Home
+      component: Home,
+      children:[
+        {
+          path: '/',
+          name: '航班预订',
+          meta: {
+            label: '航班预订',
+            requireAuth: true,//判断是否需要登录
+          },
+          component: () => import('../view/flight/fightBook'),
+        },
+        ]
     },
     {
       path: '/Login',

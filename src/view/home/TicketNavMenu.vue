@@ -1,7 +1,7 @@
 <template>
     <div>
       <el-menu  style="border-right: solid 0px #e6e6e6;text-align: left"
-      default-active="2"
+      default-active="1"
       class="el-menu-vertical-demo">
       <el-menu-item index="1" @click="jumppage('/fightBook')" >
         <i class="el-icon-location"></i>

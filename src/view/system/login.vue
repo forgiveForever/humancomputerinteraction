@@ -4,24 +4,18 @@
       <div slot="header" class="clearfix">
         <span><b style="color:rgb(88,138,165)">航班预定系统</b></span>
       </div>
-   <el-form style="margin: 20px 0" :rules="rules">
-      <el-form-item prop="userName" class="form-item">
-       <el-input class="radius"
-              type="text"
-                 prop="userName"
+   <el-form style="margin: 20px 0" >
+      <el-form-item prop="userName">
+       <el-input
               v-model="loginForm.userName"
-              ref="adminput"
-              auto-complete="off"
               placeholder="请输入用户名">
         <i slot="prefix" class="icon iconfont icon-ren"></i>
        </el-input>
      </el-form-item>
-     <el-form-item prop="password" class="form-item">
-      <el-input class="radius"
+     <el-form-item prop="password" >
+      <el-input
               type="password"
-                prop="password"
               v-model="loginForm.password"
-              auto-complete="off"
               placeholder="请输入密码">
       <i slot="prefix" class="icon iconfont icon-suo"></i>
     </el-input>
@@ -49,8 +43,8 @@
       data(){
           return{
             rules:{
-              userName:[{ required: true, message: '不能为空'}, ],
-              password:[{ required: true, message: '不能为空'}, ],
+              userName:{ required: true, message: '不能为空'},
+              password:{ required: true, message: '不能为空'},
             },
             loginForm:{
               userName:null,
@@ -84,7 +78,13 @@
               })
             }
           }
+      },
+    watch:{
+      loginForm(){
+        this.rules.userName.required = this.loginForm.userName != null ? false : true;
+        this.rules.password.required = this.loginForm.password != null ? false : true;
       }
+    }
     }
 </script>
 
